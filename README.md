@@ -1,5 +1,7 @@
-# Angular QuickStart Source
+# Angular QuickStart Source : THE HERO EDITOR 
 [![Build Status][travis-badge]][travis-badge-url]
+
+URL EXAMPLE: <a href="https://angular.io/docs/ts/latest/tutorial/toh-pt1.html" target="_blank">SOURCE</a>
 
 This repository holds the TypeScript source code of the [angular.io quickstart](https://angular.io/docs/ts/latest/quickstart.html),
 the foundation for most of the documentation samples and potentially a good starting point for your application.
