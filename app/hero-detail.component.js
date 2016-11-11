@@ -12,7 +12,6 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var hero_service_1 = require('./hero.service');
-var hero_1 = require('./hero');
 var HeroDetailComponent = (function () {
     function HeroDetailComponent(heroSerive, route, location) {
         this.heroSerive = heroSerive;
@@ -30,15 +29,12 @@ var HeroDetailComponent = (function () {
     HeroDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', hero_1.Hero)
-    ], HeroDetailComponent.prototype, "hero", void 0);
     HeroDetailComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'my-hero-detail',
-            template: "<div *ngIf=\"hero\">\n\t    \t\t\t<h2>{{hero.name}} details!</h2>\n\t\t\t\t\t<div><label>id: </label>{{hero.id}}</div>\n\t\t\t\t\t<div>\n\t\t\t\t\t\t<label>name: </label>\n\t\t\t\t\t\t<input [(ngModel)]=\"hero.name\" placeholder=\"name\">\n\t\t\t\t\t</div>\n\t\t\t\t</div>\n\t\t\t\t<button (click)=\"goBack()\">Back</button>"
+            templateUrl: 'heroes-detail.component.html',
+            styleUrls: ['heroes-detail.component.css']
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.ActivatedRoute, common_1.Location])
     ], HeroDetailComponent);
