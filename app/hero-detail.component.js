@@ -13,8 +13,8 @@ var router_1 = require('@angular/router');
 var common_1 = require('@angular/common');
 var hero_service_1 = require('./hero.service');
 var HeroDetailComponent = (function () {
-    function HeroDetailComponent(heroSerive, route, location) {
-        this.heroSerive = heroSerive;
+    function HeroDetailComponent(heroService, route, location) {
+        this.heroService = heroService;
         this.route = route;
         this.location = location;
     }
@@ -22,9 +22,14 @@ var HeroDetailComponent = (function () {
         var _this = this;
         this.route.params.forEach(function (params) {
             var id = +params['id'];
-            _this.heroSerive.getHero(id)
+            _this.heroService.getHero(id)
                 .then(function (hero) { return _this.hero = hero; });
         });
+    };
+    HeroDetailComponent.prototype.save = function () {
+        var _this = this;
+        this.heroService.update(this.hero)
+            .then(function () { return _this.goBack(); });
     };
     HeroDetailComponent.prototype.goBack = function () {
         this.location.back();
